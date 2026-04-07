@@ -34,3 +34,22 @@ Where the first line has the number of chars `n`, the next next `n` lines have t
 
 ## Question 1:
 ![image](out/hvlcs_runtime.png)
+
+## Question 2:
+
+`OPT(i, j)` is the maximum value common subsequence between the first `i` characters of the sequence `A` and the first `j` characters of the sequence `B`. 
+
+The base cases are `OPT(0, j)` and `OPT(i, 0)` which both trivially equal `0`.
+
+Recurrance cases:
+There are three possibilities within `OPT(i, j)`.
+1. `A[i]` is not in the optimal subsequence so `OPT(i-1, j)` is the same as `OPT(i, j)`.
+2. `B[j]` is not in the optimal subsequence so similarly, `OPT(i, j-1)` is equal to `OPT(i, j)`
+3. `A[i]` and `B[j]` are in the optimal subsequence, further, that implies that `A[i] == B[j]`.
+
+
+So from that there are two recurrances, if `A[i] != B[j]` Then the case where both are optimial is impossible so you have `OPT(i, j) = max(OPT(i-1, j), OPT(i, j-1))`.
+If `A[i] == B[j]` then you have 
+`OPT(i, j) = max(OPT(i-1, j), OPT(i, j-1), OPT(i-1, j-1) + v(A[i]))`.
+
+This works because the recurance covers all possibles cases which includes the base cases, so the rest of the table could be filled out form those.
