@@ -4,19 +4,15 @@ Harrison Chojnowski: `46524954`
 
 Pranav Annapareddy: `21340719`
 
-**Running our code:**
+#### Running our code
 
-The executable is actually saved to the repo so you can just run:
-```bash
-./hvlcs < data/example.in
-```
-from the project root.
-
-If you need to recompile the script, you will need a valid C++ compiler. Then you can run,
+From the project root, you need a valid C++ compiler, this example uses `g++` but anything will do.
+Then run,
 ```bash
 g++ -o hvlcs src/main.cpp src/hvlcs.cpp
+./hvlcs < data/example.in
 ```
-and then repeat the command above.
+You can also use any of the other `.in` files in the `data` directory.
 
 Assume the inputs follow the same format as given in the project specifications, namely:
 
@@ -28,7 +24,7 @@ c 5
 aacb
 caab
 ```
-Where the first line has the number of chars `n`, the next next `n` lines have the char followed by its value. Then the two char sequences.
+Where the first line has the number of chars in the vocabulary `K`, the next `k` lines have the char followed by its value. Then the last two lines are the two sequences of chars.
 
 # Written Questions
 
